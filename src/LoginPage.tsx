@@ -1,6 +1,33 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 
+
+function LogIn() {
+  const login = document.getElementById("login-input").value;
+  const password = document.getElementById("password-input").value;
+
+  fetch("database/users.json")
+      .then(response => response.json())
+      .then(data => {
+        const user = data.users.find(
+            user => user.email === login && user.password === password
+        );
+
+        if (user) {
+          console.log("Login successful:", user);
+          // redirect or show success message
+        } else {
+          console.log("Invalid login or password");
+          // show error message
+        }
+      })
+      .catch(error => {
+        console.error("Error loading user data:", error);
+      });
+}
+
+
+
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,6 +61,7 @@ const LoginPage: React.FC = () => {
           <input
             className={`login-input${error ? ' login-input-error' : ''}`}
             type="text"
+            id="login-input"
             placeholder="Enter your email or wallet ID"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -46,6 +74,7 @@ const LoginPage: React.FC = () => {
               className="login-input"
               type={showPassword ? 'text' : 'password'}
               placeholder="Password"
+              id="password-input"
               value={password}
               onChange={e => setPassword(e.target.value)}
               autoComplete="current-password"
@@ -59,7 +88,7 @@ const LoginPage: React.FC = () => {
               <span role="img" aria-label="Show password">{showPassword ? '🙈' : '👁️'}</span>
             </button>
           </div>
-          <button className="login-continue-btn" type="submit">Continue</button>
+          <button className="login-continue-btn" type="submit" onClick={LogIn}>Continue</button>
         </form>
         <button className="login-forgot-btn">Forgot password?</button>
         <div className="login-recovery-link">Login with 12 word recovery phrase</div>

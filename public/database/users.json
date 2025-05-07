@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "login": "John",
+      "password": "Doe",
+      "email": "bujorsandu391@gmail.com",
+      "uid": "01",
+      "country": "USA",
+      "idnp": "2004500465959",
+      "age": "12"
+    }
+  ]
+}
