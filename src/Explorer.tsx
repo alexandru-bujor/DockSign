@@ -1,93 +1,11 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  max-width: 800px;
-  margin: 2rem auto;
-  font-family: 'Segoe UI', sans-serif;
-`;
-
-const SearchBox = styled.div`
-  display: flex;
-  gap: 12px;
-    background: white;
-  margin-bottom: 24px;
-`;
-
-const SearchInput = styled.input`
-  flex: 1;
-  padding: 12px 16px;
-  border: 1px solid #e1e1e1;
-  border-radius: 6px;
-  font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  
-  &:focus {
-    outline: none;
-    border-color: #4d90fe;
-    box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2);
-  }
-`;
-
-const SearchButton = styled.button`
-  padding: 12px 24px;
-  background: #4d90fe;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-  
-  &:hover {
-    background: #357ae8;
-  }
-`;
-
-const ResultCard = styled.div`
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-`;
-
-const ResultRow = styled.div`
-    display: flex;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0f0f0;
-
-    &:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-`;
-
-const ResultLabel = styled.div`
-    font-weight: 600;
-    color: #666;
-    min-width: 150px;
-`;
-
-const ResultValue = styled.div<{ valid?: boolean }>`
-    flex: 1;
-    color: ${props => props.valid ? '#4CAF50' : '#F44336'};
-    font-weight: ${props => props.valid ? '600' : 'normal'};
-`;
-
-const ValidBadge = styled.span<{ valid: boolean }>`
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: ${props => props.valid ? '#E8F5E9' : '#FFEBEE'};
-    color: ${props => props.valid ? '#2E7D32' : '#C62828'};
-    font-size: 14px;
-    font-weight: 500;
-`;
+import type { ChangeEvent, KeyboardEvent } from 'react';
+import { FiSearch, FiCheckCircle, FiXCircle, FiLoader } from 'react-icons/fi';
+import './Explorer.css';
 
 const Explorer = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const [result, setResult] = useState<null | {
         creator1: string;
         creator2: string;
@@ -95,60 +13,87 @@ const Explorer = () => {
         isValid: boolean;
     }>(null);
 
-    const handleSearch = () => {
-        // Mock search results
-        if (searchQuery.trim()) {
-            setResult({
-                creator1: 'Andrei V.',
-                creator2: 'Cosmin S.',
-                contractType: 'Vanzare Cumparare',
-                isValid: Math.random() > 0.5 // Random valid/invalid for demo
-            });
-        }
+    const handleSearch = async () => {
+        if (!searchQuery.trim()) return;
+        
+        setIsLoading(true);
+        setResult(null);
+
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        setResult({
+            creator1: 'Andrei V.',
+            creator2: 'Cosmin S.',
+            contractType: 'Vanzare Cumparare',
+            isValid: Math.random() > 0.5
+        });
+        
+        setIsLoading(false);
     };
 
     return (
-        <Container>
-            <h1>Contract Verification Explorer</h1>
+        <div className="explorer-container">
+            <h1 className="explorer-title">Contract Verification Explorer</h1>
+            <p className="explorer-subtitle">
+                Verify and explore contract details by entering the contract address
+            </p>
 
-            <SearchBox>
-                <SearchInput
+            <div className="search-box">
+                <FiSearch className="search-icon" />
+                <input
+                    className="search-input"
                     type="text"
                     placeholder="Enter contract address (e.g. 0x...)"
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && handleSearch()}
                 />
-                <SearchButton onClick={handleSearch}>
-                    Search
-                </SearchButton>
-            </SearchBox>
+                <button 
+                    className="search-button" 
+                    onClick={handleSearch}
+                    disabled={isLoading}
+                >
+                    {isLoading ? (
+                        <>
+                            <FiLoader className="loading-spinner" />
+                            Searching...
+                        </>
+                    ) : (
+                        <>
+                            <FiSearch />
+                            Search
+                        </>
+                    )}
+                </button>
+            </div>
 
             {result && (
-                <ResultCard>
-                    <ResultRow>
-                        <ResultLabel>First Creator</ResultLabel>
-                        <ResultValue>{result.creator1}</ResultValue>
-                    </ResultRow>
-                    <ResultRow>
-                        <ResultLabel>Second Creator</ResultLabel>
-                        <ResultValue>{result.creator2}</ResultValue>
-                    </ResultRow>
-                    <ResultRow>
-                        <ResultLabel>Contract Type</ResultLabel>
-                        <ResultValue>{result.contractType}</ResultValue>
-                    </ResultRow>
-                    <ResultRow>
-                        <ResultLabel>Verification</ResultLabel>
-                        <ResultValue valid={result.isValid}>
-                            <ValidBadge valid={result.isValid}>
-                                {result.isValid ? 'Valid' : 'Invalid'}
-                            </ValidBadge>
-                        </ResultValue>
-                    </ResultRow>
-                </ResultCard>
+                <div className="result-card">
+                    <div className="result-row">
+                        <div className="result-label">First Creator</div>
+                        <div className="result-value">{result.creator1}</div>
+                    </div>
+                    <div className="result-row">
+                        <div className="result-label">Second Creator</div>
+                        <div className="result-value">{result.creator2}</div>
+                    </div>
+                    <div className="result-row">
+                        <div className="result-label">Contract Type</div>
+                        <div className="result-value">{result.contractType}</div>
+                    </div>
+                    <div className="result-row">
+                        <div className="result-label">Verification</div>
+                        <div className={`result-value ${result.isValid ? 'valid' : 'invalid'}`}>
+                            <span className={`valid-badge ${result.isValid ? 'valid' : 'invalid'}`}>
+                                {result.isValid ? <FiCheckCircle /> : <FiXCircle />}
+                                {result.isValid ? 'Valid Contract' : 'Invalid Contract'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
             )}
-        </Container>
+        </div>
     );
 };
 

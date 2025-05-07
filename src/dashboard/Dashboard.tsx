@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState } from 'react'
 import './Dashboard.css';
 
 interface UserProfile {
@@ -13,6 +14,8 @@ interface UserProfile {
 }
 
 const Dashboard: React.FC = () => {
+
+=======
   const [user, setUser] = useState<UserProfile | null>(null);
   const [error, setError] = useState('');
 
@@ -167,6 +170,7 @@ const Dashboard: React.FC = () => {
           </div>
         </main>
       </div>
+
   );
 };
 

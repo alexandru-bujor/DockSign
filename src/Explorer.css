@@ -1,0 +1,231 @@
+/* Explorer.css */
+:root {
+  --primary-color: #4d90fe;
+  --primary-hover: #357ae8;
+  --success-color: #4CAF50;
+  --error-color: #F44336;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --border-color: #e1e1e1;
+  --background-light: #f8f9fa;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --navbar-height: 80px;
+}
+
+.explorer-container {
+  max-width: 900px;
+  margin: calc(var(--navbar-height) + 3rem) auto 3rem;
+  padding: 0 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.explorer-title {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.explorer-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-box {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: var(--background-light);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(77, 144, 254, 0.2);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.search-button {
+  padding: 0 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(77, 144, 254, 0.2);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+.result-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.result-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.result-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 180px;
+  font-size: 1.1rem;
+}
+
+.result-value {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.result-value.valid {
+  color: var(--success-color);
+}
+
+.result-value.invalid {
+  color: var(--error-color);
+}
+
+.valid-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.valid-badge.valid {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.valid-badge.invalid {
+  background: rgba(244, 67, 54, 0.1);
+  color: var(--error-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .explorer-container {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .explorer-title {
+    font-size: 2rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .result-label {
+    min-width: auto;
+  }
+}
+
+/* Loading State */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
