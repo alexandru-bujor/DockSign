@@ -1,0 +1,207 @@
+.hero-colored-bg {
+    background: linear-gradient(to right, #1b1063, #6a1f54);
+    min-height: 100vh;
+    padding: 8rem 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -72px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.signup-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.signup-form input {
+    height: 40px;
+    min-width: 180px;
+    max-width: 320px;
+    flex: 1;
+    padding: 0 16px;
+    font-size: 1rem;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+    backdrop-filter: blur(6px);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.signup-form input:focus {
+    border: 1.5px solid #a3bffa;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+}
+
+.signup-form input::placeholder {
+    color: #e0dede;
+    font-size: 1rem;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.signup-form button {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #f5faff;
+    color: #2563eb;
+    border: none;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.signup-form button:hover {
+    background: #e0e7ff;
+    color: #1e40af;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10);
+}
+
+.input-error {
+    border: 2px solid #FFD580;
+    background: #FFF9ED;
+    transition: border 0.2s;
+}
+
+.email-error-tooltip {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    background: #FFF9ED;
+    color: #B26A00;
+    border: 1px solid #FFD580;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-top: 6px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255, 213, 128, 0.10);
+    max-width: 270px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.error-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    top: -7px;
+    left: 18px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 7px solid #FFD580;
+    z-index: 2;
+}
+
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+
+.hero-left {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.hero-image-wrapper {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.hero-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(44, 44, 84, 0.18);
+  object-fit: contain;
+  background: rgba(255,255,255,0.05);
+}
+
+@media (max-width: 900px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .hero-image-wrapper {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .hero-image {
+    max-width: 300px;
+  }
+  .hero-left {
+    align-items: center;
+    text-align: center;
+  }
+} 

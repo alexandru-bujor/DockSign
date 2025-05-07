@@ -1,0 +1,228 @@
+.check-bg {
+  min-height: 100vh;
+  background: #f6f3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.check-container {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px 0 rgba(44, 44, 84, 0.10);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.check-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #222;
+}
+
+.check-stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.check-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.check-step.active .check-step-icon {
+  background: #ede7ff;
+}
+
+.check-step-icon.done {
+  background: #e0e0e0;
+}
+
+.check-step-line {
+  width: 80px;
+  height: 4px;
+  background: #bbb;
+  margin: 0 0.5rem;
+  border-radius: 2px;
+}
+
+.check-table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(44, 44, 84, 0.08);
+  background: #fff;
+}
+
+.check-table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  background: #6a1f54;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+}
+
+.check-table-body {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  font-size: 1.1rem;
+  color: #222;
+  border: 1px solid #bbb;
+  border-top: none;
+}
+
+.check-upload-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  color: #222;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 1.5rem 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.check-upload-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #6a1f54
+}
+
+.check-upload-text {
+  color: #222;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .check-container {
+    padding: 1.2rem 0.5rem;
+    border-radius: 1.2rem;
+  }
+  .check-title {
+    font-size: 1.2rem;
+  }
+  .check-step-line {
+    width: 40px;
+  }
+  .check-table-header {
+    font-size: 1rem;
+    padding: 0.6rem 0.5rem;
+  }
+  .check-upload-area {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
+
+.check-step-icon.green svg circle {
+  fill: #22c55e !important;
+  transition: fill 0.3s;
+}
+.check-step-icon.green svg path {
+  stroke: #fff !important;
+  transition: stroke 0.3s;
+}
+.check-step-icon.animate {
+  animation: checkmark-pop 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes checkmark-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.3); }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.check-action-btn {
+  margin: 2rem auto 0 auto;
+  display: block;
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2.5rem;
+  box-shadow: 0 2px 12px 0 rgba(34, 197, 94, 0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.check-action-btn:hover {
+  background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%);
+  box-shadow: 0 4px 24px 0 rgba(34, 197, 94, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.check-action-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem auto 0 auto;
+}
+
+.clear-action-btn {
+  background: linear-gradient(90deg, #f87171 0%, #ef4444 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2.5rem;
+  box-shadow: 0 2px 12px 0 rgba(239, 68, 68, 0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.clear-action-btn:hover {
+  background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+  box-shadow: 0 4px 24px 0 rgba(239, 68, 68, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.delete-file-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+}
+.delete-file-btn svg line {
+  stroke: #e11d48;
+  transition: stroke 0.2s;
+}
+.delete-file-btn:hover svg line {
+  stroke: #be123c;
+}
+.delete-file-btn:hover {
+  transform: scale(1.15) rotate(8deg);
+} 

@@ -1,0 +1,227 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #1f3b8b, #a13d94);
+    color: white;
+    position: relative;
+  }
+  
+  .navbar-logo-img {
+    height: 40px;
+  }
+  
+  .navbar-spacer {
+    flex-grow: 1;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    background: white;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+  }
+  
+  .navbar-links,
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-links li {
+    list-style: none;
+  }
+  
+  .navbar-links a,
+  .navbar-actions button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .navbar-actions .signup-btn {
+    background-color: white;
+    color: #1f3b8b;
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+  
+  /* Hero section */
+  .home-bg {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .hero-colored-bg {
+    background: linear-gradient(to right, #1f3b8b, #a13d94);
+    padding: 4rem 2rem;
+    color: white;
+  }
+  
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Signup form */
+  .signup-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .signup-form input {
+    padding: 12px;
+    font-size: 1rem;
+    min-width: 220px;
+    flex: 1;
+  }
+  
+  .signup-form button {
+    padding: 12px 24px;
+    background-color: white;
+    color: #1f3b8b;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  /* Info section */
+  .info-section {
+    background: #f6f3ff;
+    padding: 3rem 0 4rem 0;
+  }
+  
+  .info-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .info-card {
+    background: #ede7ff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(44, 44, 84, 0.10);
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .info-card.wide {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    min-height: 220px;
+    gap: 2.5rem;
+  }
+  .info-card-content {
+    z-index: 2;
+  }
+  .info-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d1863;
+    margin-bottom: 1rem;
+  }
+  .info-card p {
+    color: #4b3a7a;
+    font-size: 1.08rem;
+    margin-bottom: 1.5rem;
+  }
+  .info-card-link {
+    color: #6a1f54;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+  }
+  .info-card-link:hover {
+    color: #a13d94;
+    text-decoration: underline;
+  }
+  .info-card-image {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .info-card-image img {
+    max-width: 90%;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(44, 44, 84, 0.10);
+  }
+  
+  .animated-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  .animated-card:nth-child(1) { animation-delay: 0.1s; }
+  .animated-card:nth-child(2) { animation-delay: 0.25s; }
+  .animated-card:nth-child(3) { animation-delay: 0.4s; }
+  
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .info-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .info-card.wide {
+      flex-direction: column;
+      gap: 1.5rem;
+      min-height: 320px;
+    }
+  }
+  

@@ -1,0 +1,231 @@
+.plans-bg {
+  min-height: 100vh;
+  background: #f6f3ff;
+  padding: 0 0 3rem 0;
+}
+
+.plans-banner {
+  background: #b6f5d8;
+  color: #1a3d2f;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.plans-banner-icon {
+  color: #22c55e;
+  font-size: 1.3em;
+  margin-right: 0.7em;
+}
+.plans-banner-save {
+  background: #22c55e;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 1em;
+  padding: 0.2em 0.8em;
+  margin-left: 1.2em;
+}
+
+.plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.plans-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.plans-tabs {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+.plans-tab {
+  background: none;
+  border: none;
+  color: #6a1f54;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.7rem 0;
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  transition: color 0.2s, border 0.2s;
+}
+.plans-tab.active {
+  color: #7b61ff;
+  border-bottom: 2.5px solid #7b61ff;
+}
+
+.plans-billing-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2.5rem 0;
+  align-items: center;
+}
+.billing-btn {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  color: #222;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-radius: 2em;
+  padding: 0.5em 2.2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  position: relative;
+}
+.billing-btn.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #7b61ff;
+}
+.billing-save {
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+  border-radius: 1em;
+  padding: 0.1em 0.7em;
+  margin-left: 0.7em;
+  position: absolute;
+  top: -1.7em;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.plans-cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.plans-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(44, 44, 84, 0.10);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  min-height: 420px;
+  border: 2px solid transparent;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+.plans-card.popular {
+  border-color: #7b61ff;
+  box-shadow: 0 8px 32px 0 rgba(123, 97, 255, 0.10);
+  transform: scale(1.03);
+}
+.plans-popular {
+  color: #7b61ff;
+  font-size: 0.95em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.7em;
+}
+.plans-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+.plans-card-desc {
+  color: #4b3a7a;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+.plans-card-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7b61ff;
+  margin-bottom: 0.2rem;
+}
+.plans-card-per {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 500;
+  margin-left: 0.2em;
+}
+.plans-card-annual {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+.plans-card-btn {
+  background: #7b61ff;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.8em 2.2em;
+  margin-bottom: 1.2em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(123, 97, 255, 0.10);
+}
+.plans-card-btn:hover {
+  background: #6a1f54;
+  transform: translateY(-2px) scale(1.03);
+}
+.plans-card-btn.contact {
+  background: #1a1a1a;
+  color: #fff;
+  margin-bottom: 1.2em;
+}
+.plans-card-contact {
+  color: #7b61ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2em;
+}
+.plans-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #222;
+  font-size: 1.01rem;
+}
+.plans-card-features li {
+  margin-bottom: 0.7em;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+.plans-check {
+  color: #22c55e;
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+
+@media (max-width: 900px) {
+  .plans-cards-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .plans-container {
+    padding: 0 0.5rem;
+  }
+  .plans-banner {
+    padding: 1rem 0.5rem;
+  }
+} 
