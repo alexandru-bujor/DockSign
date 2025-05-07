@@ -36,23 +36,13 @@ const Home: React.FC = () => {
     }
   };
 
-  const handleScrollToInfo = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const section = document.getElementById('info-section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      section.classList.add('highlight-info-section');
-      setTimeout(() => section.classList.remove('highlight-info-section'), 1200);
-    }
-  };
-
   return (
     <div className="home-bg">
       <div className="hero-colored-bg">
         <div className="hero-content-wrapper">
           <main className="hero hero-left">
             <h1>Step Into the Future of Digital Assets</h1>
-            <p>Experience secure, fast, and easy crypto transactions on a platform built for everyone.</p>
+            <p>Experience secure, fast, and easy documents transactions on a platform built for everyone.</p>
             <form className="signup-form" onSubmit={handleSubmit} noValidate>
               <div className="input-group">
                 <input
@@ -77,7 +67,7 @@ const Home: React.FC = () => {
             </form>
           </main>
           <div className="hero-image-wrapper">
-            <img src="/src/photos/Untitled (1).png" alt="Hero visual" className="hero-image" />
+            <img src="/src/photos/smart-contract.gif" alt="Smart Contract Animation" className="hero-image no-bg" />
           </div>
         </div>
       </div>
@@ -87,7 +77,7 @@ const Home: React.FC = () => {
             <div className="info-card-content">
               <h2>Search, manage, and analyze agreements with AI</h2>
               <p>Use AI to find agreements and terms quickly, receive agreement reminders, and access powerful insights from a central repository.</p>
-              <a href="#info-section" className="info-card-link" onClick={handleScrollToInfo}>Explore Navigator &rarr;</a>
+              <a href="#info-section" className="info-card-link">Explore Navigator &rarr;</a>
             </div>
             <div className="info-card-image">
               <img src="https://placehold.co/320x120?text=Search+documents" alt="Search documents" />

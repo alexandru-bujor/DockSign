@@ -1,14 +1,17 @@
 .hero-colored-bg {
     background: linear-gradient(to right, #1b1063, #6a1f54);
     min-height: 100vh;
-    padding: 8rem 2rem;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -72px;
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    color: white;
+    margin-top: 0;
     position: relative;
     z-index: 1;
+    padding-left: 8rem;
+    padding-right: 8rem;
 }
 
 .hero {
@@ -42,10 +45,11 @@
 .signup-form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 0.5rem;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 .input-group {
@@ -152,7 +156,7 @@
 .hero-content-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -182,9 +186,13 @@
   width: 100%;
   height: auto;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(44, 44, 84, 0.18);
   object-fit: contain;
-  background: rgba(255,255,255,0.05);
+  background: transparent;
+}
+
+.hero-image.no-bg {
+  background: transparent;
+  box-shadow: none;
 }
 
 @media (max-width: 900px) {
