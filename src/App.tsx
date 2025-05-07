@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import PlansPage from './PlansPage';
+import Explorer from './Explorer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/plans" element={<PlansPage />} />
+        <Route path="/explorer" element={<Explorer />} />
       </Routes>
     </>
   );

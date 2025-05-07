@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+  /*const location = useLocation();
   const navigate = useNavigate();
 
   const handleScrollToInfoSection = (e: React.MouseEvent) => {
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
       }
     }
   };
-
+*/
   return (
     <nav className="navbar">
       <Link to="/">
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       <ul className={`navbar-links${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(false)}>
         <li><Link to="/login">Sign</Link></li>
         <li><Link to="/check">Check</Link></li>
-        <li><a href="#info-section" onClick={handleScrollToInfoSection}>Explorer</a></li>
+          <li><Link to="/explorer"> Explorer</Link></li>
         <li><Link to="/plans">Plans & Pricing</Link></li>
       </ul>
       <div className={`navbar-actions${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(false)}>
