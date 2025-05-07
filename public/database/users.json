@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "email": "macovetchi.bogdan@gmail.com",
+      "password": "MBogdan123124",
+      "name": "Johny Doe",
+      "avatar": "",
+      "documentsCount": 15,
+      "recentSignatures": 8,
+      "pendingDocuments": 3,
+      "completedDocuments": 12,
+      "documents": [
+        {
+          "id": "1",
+          "name": "Agreement.pdf",
+          "type": "PDF",
+          "size": "2.1 MB",
+          "lastModified": "3 hours ago",
+          "status": "pending"
+        },
+        {
+          "id": "2",
+          "name": "Invoice.docx",
+          "type": "DOCX",
+          "size": "1.9 MB",
+          "lastModified": "1 day ago",
+          "status": "signed"
+        }
+      ]
+    }
+  ]
+}
