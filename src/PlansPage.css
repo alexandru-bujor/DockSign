@@ -75,7 +75,7 @@
 .plans-billing-toggle {
   display: flex;
   gap: 0.5rem;
-  margin: 1.5rem 0 2.5rem 0;
+  margin: 2.5rem 0 2.5rem 0;
   align-items: center;
 }
 .billing-btn {
@@ -101,10 +101,9 @@
   font-size: 0.9em;
   font-weight: 600;
   border-radius: 1em;
-  padding: 0.1em 0.7em;
-  margin-left: 0.7em;
+  padding: 0.2em 0.7em;
   position: absolute;
-  top: -1.7em;
+  top: -1.5em;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
@@ -121,7 +120,7 @@
   background: #fff;
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px 0 rgba(44, 44, 84, 0.10);
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  padding: 3.98rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -131,6 +130,7 @@
   transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
 }
 .plans-card.popular {
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   border-color: #7b61ff;
   box-shadow: 0 8px 32px 0 rgba(123, 97, 255, 0.10);
   transform: scale(1.03);

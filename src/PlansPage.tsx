@@ -4,36 +4,61 @@ import './PlansPage.css';
 const plans = [
   {
     name: 'Personal',
-    price: { annual: 10, monthly: 12 },
+    price: { annual: 39, monthly: 49 },
     description: 'For individuals and sole proprietors with basic e-signature needs',
     features: [
-      'Send 5 envelopes for signature each month',
-      'Save time and standardize with reusable templates',
-      'Streamline your workflows with 900+ integrations',
+      '30 docs availble for sign/mo.',
+      'Cloud storage of 5GB',
+      'Personal cabinet',
+      'Unlimited free verifications',
+      'Get live technical support 24/7',
+      'Protect your agreements to avoid identity fraud'
+      
     ],
     cta: 'Buy Now',
     mostPopular: false,
   },
   {
-    name: 'Standard',
-    price: { annual: 25, monthly: 30 },
+    name: 'Growth',
+    price: { annual: 129, monthly: 149 },
     description: 'For small to medium teams that need to send, sign and collaborate',
     features: [
-      'Send a total of 100 envelopes/user/year for signature',
-      'Share your templates easily with your team members',
-      'Add comments in real time with collaborative commenting',
+      '100 docs availble for sign/mo.',
+      'Cloud storage of 20GB',
+      'Personal cabinet',
+      'Unlimited free verifications',
+      'Get live technical support 24/7',
+      'Protect your agreements to avoid identity fraud'
     ],
     cta: 'Buy Now',
     mostPopular: true,
   },
   {
-    name: 'Business Pro',
-    price: { annual: 40, monthly: 48 },
+    name: 'Professional',
+    price: { annual: 269, monthly: 299 },
     description: 'For automating and optimizing agreements with advanced features',
     features: [
-      'Send a total of 100 envelopes/user/year for signature',
-      'Request attachments easily from your recipients',
-      'Build conditional logic and use advanced fields',
+      '250 docs availble for sign/mo.',
+      'Cloud storage of 50GB',
+      'Personal cabinet',
+      'Unlimited free verifications',
+      'Get live technical support 24/7',
+      'Protect your agreements to avoid identity fraud',
+    ],
+    cta: 'Buy Now',
+    mostPopular: false,
+  },
+  {
+    name: 'Enterprise',
+    price: { annual: 449, monthly: 499 },
+    description: 'For large companies that need to send, sign and collaborate',
+    features: [
+      '500 docs availble for sign/mo.',
+      'Cloud storage of 100GB',
+      'Personal cabinet',
+      'Unlimited free verifications',
+      'Get live technical support 24/7',
+      'Protect your agreements to avoid identity fraud',
     ],
     cta: 'Buy Now',
     mostPopular: false,
@@ -46,31 +71,17 @@ const PlansPage: React.FC = () => {
 
   return (
     <div className="plans-bg">
-      <div className="plans-banner">
-        <span className="plans-banner-icon">&#10003;</span>
-        Offer ends Friday. Save 20% on annual plans with promo code <b>ANNUAL20</b>. Personal plans excluded.*
-        <span className="plans-banner-save">Save 20%</span>
-      </div>
+      
       <div className="plans-container">
         <h1 className="plans-title">Choose your plan</h1>
-        <div className="plans-tabs">
-          {['eSignature', 'eSignature real estate', 'Developer API', 'IAM'].map(t => (
-            <button
-              key={t}
-              className={`plans-tab${tab === t ? ' active' : ''}`}
-              onClick={() => setTab(t)}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
+        
         <div className="plans-billing-toggle">
           <button
             className={`billing-btn${billing === 'annual' ? ' active' : ''}`}
             onClick={() => setBilling('annual')}
           >
             Annual
-            {billing === 'annual' && <span className="billing-save">Save up to 44%</span>}
+            {billing === 'annual' && <span className="billing-save">Save up to 22%</span>}
           </button>
           <button
             className={`billing-btn${billing === 'monthly' ? ' active' : ''}`}
@@ -100,17 +111,7 @@ const PlansPage: React.FC = () => {
               </ul>
             </div>
           ))}
-          <div className="plans-card contact">
-            <div className="plans-card-title">Expand your team's toolkit</div>
-            <div className="plans-card-desc">Customize an eSignature or IAM plan that scales to your business needs.</div>
-            <div className="plans-card-contact">1 (877) 720-2040</div>
-            <button className="plans-card-btn contact">Contact Sales</button>
-            <ul className="plans-card-features">
-              <li><span className="plans-check">✔</span> Enhance data management across multiple accounts</li>
-              <li><span className="plans-check">✔</span> Get live technical support 24/7</li>
-              <li><span className="plans-check">✔</span> Protect your agreements to avoid identity fraud</li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>

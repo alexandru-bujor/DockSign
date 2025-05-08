@@ -85,40 +85,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="info-section" id="info-section">
-        <div className="info-cards-grid">
-          <div className="info-card animated-card">
-            <div className="info-card-content">
-              <h2>Search, manage, and analyze agreements with AI</h2>
-              <p>Use AI to find agreements and terms quickly, receive agreement reminders, and access powerful insights from a central repository.</p>
-              <a href="#info-section" className="info-card-link">Explore Navigator &rarr;</a>
-            </div>
-            <div className="info-card-image">
-              <img src="https://placehold.co/320x120?text=Search+documents" alt="Search documents" />
-            </div>
-          </div>
-          <div className="info-card animated-card">
-            <div className="info-card-content">
-              <h2>Send, sign, and track documents</h2>
-              <p>Get signatures from anywhere, using almost any device. Finalize agreements faster with collaborative commenting, shared templates, and delivery in the apps your signers already use.</p>
-              <a href="#" className="info-card-link">Explore eSignature &rarr;</a>
-            </div>
-            <div className="info-card-image">
-              <img src="https://placehold.co/320x120?text=Sign+documents" alt="Sign documents" />
-            </div>
-          </div>
-          <div className="info-card animated-card wide">
-            <div className="info-card-content">
-              <h2>Automate agreement processes</h2>
-              <p>Build customized workflows that automate and accelerate the various steps in your agreement processes—no coding required.</p>
-              <a href="#" className="info-card-link">Explore Maestro &rarr;</a>
-            </div>
-            <div className="info-card-image">
-              <img src="https://placehold.co/320x120?text=Automate+processes" alt="Automate processes" />
-            </div>
-          </div>
-        </div>
-      </div>
+              
     </div>
   );
 };
